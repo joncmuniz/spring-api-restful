@@ -1,0 +1,30 @@
+version: '3'
+services:
+  postgres-apis:
+    build: ./build-postgres
+    environment:
+      POSTGRES_PASSWORD: "postgr3ss@pi"
+      POSTGRES_USER: "postgres"
+    ports:
+      - "15432:5432"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - postgres-compose-network
+      
+  teste-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "joncmuniz@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "postgr3ss@pi"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres-apis
+    networks:
+      - postgres-compose-network
+
+networks: 
+  postgres-compose-network:
+    driver: bridge

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <customer
+        id="1"
+        name="customer1"
+        birthdate="2000-03-02"
+        cpf="123456789"
+        gender="FEMALE"
+    />
+</dataset>
