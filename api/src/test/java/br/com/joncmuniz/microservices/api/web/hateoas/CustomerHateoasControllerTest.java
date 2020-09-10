@@ -91,10 +91,6 @@ public class CustomerHateoasControllerTest {
 		address.setNumber(444);
 		customer.setAdresses(Arrays.asList(address));
 		
-		
-		Mockito.doReturn(customer)
-	       .when(customerHateoasController)
-	       .findOne(Mockito.any(),Mockito.eq(2l));
 	}
 	
 
@@ -104,10 +100,4 @@ public class CustomerHateoasControllerTest {
 				.andExpect(content().string(containsString("")));
 	}
 	
-	@Test
-	public void customer2ShouldReturnOkCode() throws Exception {
-		this.mockMvc.perform(get("/api/hateoas/customers/2")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string(containsString("")));
-	}
-
 }
