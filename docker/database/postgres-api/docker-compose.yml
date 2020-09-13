@@ -1,0 +1,22 @@
+version: '3'
+services:
+  postgres-spring-api:
+    image: joncmuniz/postgresql-api
+    environment:
+      POSTGRES_PASSWORD: "postgr3ss@pi"
+      POSTGRES_USER: "postgres"
+    ports:
+      - "15432:5432"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    hostname: postgres-spring-api
+    extra_hosts:
+      - "spring-boot-apis:172.28.0.3"
+    networks:
+      default:
+        ipv4_address: 172.28.0.2
+networks:
+      default:
+        external:
+          name: postgres-spring-api-compose-network

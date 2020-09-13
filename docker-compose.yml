@@ -1,0 +1,21 @@
+version: '3'
+services:
+  spring-boot-apis:
+    build: ./
+    ports:
+      - "8082:8082"
+    environment:
+      POSTGRES_PASSWORD: "postgr3ss@pi"
+      POSTGRES_USER: "postgres"
+    ports:
+      - "8082:8082"
+    hostname: spring-boot-apis
+    extra_hosts:
+      - "postgres-spring-api:172.28.0.2"
+    networks:
+      default:
+        ipv4_address: 172.28.0.3
+networks:
+      default:
+        external:
+          name: postgres-spring-api-compose-network
