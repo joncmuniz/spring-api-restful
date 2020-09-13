@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres-apis:
+    build: ./build-postgres
+    environment:
+      POSTGRES_PASSWORD: "postgr3ss@pi"
+      POSTGRES_USER: "postgres"
+    ports:
+      - "15432:5432"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    hostname: postgres-apis 
+networks:
+      default:
+        external:
+          name: postgres-spring-api-compose-network

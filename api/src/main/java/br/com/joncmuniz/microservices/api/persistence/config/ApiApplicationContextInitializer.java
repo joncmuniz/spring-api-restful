@@ -11,6 +11,10 @@ import org.springframework.core.io.support.ResourcePropertySource;
 
 import com.google.common.base.Preconditions;
 
+/**
+ * @author jonathan
+ *
+ */
 public class ApiApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     private final Logger logger = LoggerFactory.getLogger(ApiApplicationContextInitializer.class);
 
@@ -23,7 +27,7 @@ public class ApiApplicationContextInitializer implements ApplicationContextIniti
     //
 
     /**
-     * Sets the active profile.
+     * Add active profile.
      */
     @Override
     public void initialize(final ConfigurableApplicationContext applicationContext) {
