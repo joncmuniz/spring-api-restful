@@ -7,9 +7,6 @@ services:
       POSTGRES_USER: "postgres"
     ports:
       - "15432:5432"
-    volumes:
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
     hostname: postgres-spring-api
     extra_hosts:
       - "spring-boot-apis:172.28.0.3"
