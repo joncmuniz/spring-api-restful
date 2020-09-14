@@ -104,8 +104,10 @@ Endpoints de relação entre Clientes e Endereços
 - DELETE /customers/12/adresses/5 - Deleta endereço #5 para cliente #12
 
 # Testes com Junit
-No projeto é demostrado 3 tipos de testes com junit
-- Teste unitario do modelo Customer, neste teste é verficado a funcionalidade do atributo transiente - age da entidade Customer. Alem disso é demonstrado como realizar testes com geração de dados dinamicos que vão ser passados ao metodo de teste. Obtendo assim varios reports distintos para cada instancia passado ao metodo, em outras palaras, um unico teste que valida diferentes tipos de contextos de Customers.
+
+**No projeto é demostrado 3 tipos de testes com junit**
+
+- Teste unitário do modelo Customer, neste teste é verficado a funcionalidade do atributo transiente - age da entidade Customer. Alem disso é demonstrado como realizar testes com geração de dados dinamicos que vão ser passados ao metodo de teste. Obtendo assim varios reports distintos para cada instancia passado ao metodo, em outras palaras, um unico teste que valida diferentes tipos de contextos de Customers.
 A ideia é utilizar o padrão de dataProvider, Apis usadas - @ParameterizedTest, @ArgumentsSource(ArgumentsLoaderProvider.class)
 br.com.joncmuniz.microservices.api.client.persitence.model.CustomerTest
 
@@ -114,14 +116,15 @@ br.com.joncmuniz.microservices.api.client.persitence.model.CustomerTest
 - Teste de integração com acesso a dados, neste teste é validado a partir da execução de um dao, injetado no contexto do teste, se o mesmo é capaz realizar acesso aos DB e retornar o dado esperado. O detalhe deste teste é a integração com a api DBUnit o que facilita a criação de cenarios esperados na base de dados, como por exemplo, utilizando DataSets mapeados no metodos dos testes @DatabaseSetup("classpath:createCustomer.xml") - Data set que garente que tenha a instacia esperada na tabela de customers. 
 CustomerRepositoryIntegrationTest
 
-**O teste abaixo, apesar de ser com contexto Web, não entra em conflito caso tenha alguma instância em execução da API, pois o mesmo cria o seu contexto com uma porta randômica, evitando assim qualquer problema de portas indisponíveis. necessitam de ter o PostgreSQL em execução**
+**O teste abaixo, apesar de ser com contexto Web, não entra em conflito caso tenha alguma instância em execução da API, pois o mesmo cria o seu contexto com uma porta randômica, evitando assim qualquer problema de portas indisponíveis.**
 
 - Teste de integração da camada de controler ao DAO, neste teste é integrado Persistencia de dados via DBUnit, TestRestTemplate Api, WebEnvironment. É validado o contexto web de retorno, corpo, codigos Http, existência de endpoints.
 CustomerHateoasControllerTest
 
 # Tratamento de execeções
 
-**Foi criado um ControllerAdvice com o intuito de se fazer a intercpção de Exceções de negócio, erros e fazendo um de/para em relação aos erros HTTP. Com o intuito de demonstrar ações de tratamento de exceções com estruturas mais desacopladas**
+**Foi criado um ControllerAdvice com o intuito de ser feito a intercpção de Exceções de negócio, erros. Onde, é feito um de/para em relação aos erros HTTP. 
+O intuito é demonstrar ações de tratamento de exceções com estruturas menos acopladas**
 
 - RestResponseEntityExceptionHandler
 
