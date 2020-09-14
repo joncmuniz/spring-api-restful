@@ -41,7 +41,7 @@ public class AddressHateoasController extends AbstractHateoasController<AddressR
 	public HttpEntity<AddressResource> create(final HttpServletRequest request,@PathVariable("customerId") final Long customerId,
 			@RequestBody @Valid final Address resource, final UriComponentsBuilder uriBuilder,
 			final HttpServletResponse response) {
-		service.managerAddressFromCustomer(customerId, resource);
+		service.manageAddressFromCustomer(customerId, resource);
 		
 		AddressResource addressResource = new AddressResource(customerId, resource);
 		addressResource.add(linkTo(methodOn(AddressHateoasController.class).getAdressesForCustomer(request,customerId)).withSelfRel());
@@ -57,7 +57,7 @@ public class AddressHateoasController extends AbstractHateoasController<AddressR
 			@PathVariable("addressId") final Long addressId,
 			@RequestBody @Valid final Address resource) {
 		resource.setId(addressId);
-		service.managerAddressFromCustomer(customerId, resource);
+		service.manageAddressFromCustomer(customerId, resource);
 		AddressResource addressResource = new AddressResource(customerId, resource);
 		addressResource.add(linkTo(methodOn(AddressHateoasController.class).getAdressesForCustomer(request,customerId)).withSelfRel());
 		addressResource.add(Link.of(linkTo(methodOn(AddressHateoasController.class).update(request, customerId, addressId,resource)).toString().replace("{addressId}", resource.getId().toString())));

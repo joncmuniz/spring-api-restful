@@ -38,8 +38,6 @@ public class ApiError {
         this.developerMessage = developerMessage;
     }
 
-    //
-
     @Override
     public final String toString() {
         final StringBuilder builder = new StringBuilder();

@@ -1,0 +1,555 @@
+{
+	"info": {
+		"_postman_id": "332c7f8b-921a-4cda-b5a0-1691de7a8d76",
+		"name": "Microservices-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create customer - A",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"A\",\n  \"cpf\": \"11111111111\",\n  \"birthDate\": \"2000-04-23T03:00:00.000\",\n  \"gender\": \"MALE\"\n \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create customer - B",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"B\",\n  \"cpf\": \"11111111112\",\n  \"birthDate\": \"1999-05-24T03:00:00.000\",\n  \"gender\": \"MALE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create customer - C",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"C\",\n  \"cpf\": \"31111111113\",\n  \"birthDate\": \"1997-05-10T01:00:00.000\",\n  \"gender\": \"FEMALE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create customer - D",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"D\",\n  \"cpf\": \"31111111114\",\n  \"birthDate\": \"1998-05-10T01:00:00.000\",\n  \"gender\": \"FEMALE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create customer - E",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"E\",\n  \"cpf\": \"1234567891224331\",\n  \"birthDate\": \"1990-04-23T03:00:00.000\",\n  \"gender\": \"MALE\"\n \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List customers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"customer without address\",\n  \"cpf\": \"12345655789\",\n  \"birthDate\": \"2012-04-23T03:00:00.000\",\n  \"gender\": \"MALE\"\n \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update customer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\":2,\n  \"name\": \"Mr. Caio 1\",\n  \"cpf\": \"1238894565452\",\n  \"birthDate\": \"2012-04-23T03:00:00.000\",\n  \"gender\": \"MALE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/customers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - Create customer - F",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"F\",\n  \"cpf\": \"71111111111\",\n  \"birthDate\": \"2000-12-23T03:00:00.000\",\n  \"gender\": \"MALE\"\n \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - Create customer -Sem body",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - Create customer -CPF á j existente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - Create Address from customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"detail\": \"stringXXXX\",\n    \"mainAddress\": true,\n    \"name\": \"string\",\n    \"number\": 0,\n    \"street\": \"string\"\n  }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers/1/adresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers",
+						"1",
+						"adresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - List customers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - List Address from customer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers/1/adresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers",
+						"1",
+						"adresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - List customers - Page&Order customer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers/?page=0&size=10&sortBy=birthDate&sortOrder=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sortBy",
+							"value": "birthDate"
+						},
+						{
+							"key": "sortOrder",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - Get Customer by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - Delete Address from Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"F\",\n  \"cpf\": \"71111111111\",\n  \"birthDate\": \"2000-12-23T03:00:00.000\",\n  \"gender\": \"MALE\"\n \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers/1/adresses/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers",
+						"1",
+						"adresses",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HATEOAS - Delete Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer\": {\n        \"id\": 1,\n        \"name\": \"customer without address\",\n        \"cpf\": \"1238894565452\",\n        \"age\": 8,\n        \"birthDate\": 1335150000000,\n        \"gender\": \"MALE\",\n        \"adresses\": [\n        \t\"customer\": {\n        \"id\": 1,\n        \"name\": \"customer without address\",\n        \"cpf\": \"1238894565452\"\n        \t}\n        \t\n        \t\n        \t]\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/hateoas/customers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"hateoas",
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

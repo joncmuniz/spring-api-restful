@@ -14,7 +14,6 @@ public class UriMapper implements IUriMapper {
     
 
     /**
-     * - note: at this point, the URI is transformed into plural (added `s`) in a hardcoded way - this will change in the future
      */
     @Override
     public <T extends IEntity> String getUriBase(final Class<T> clazz) {

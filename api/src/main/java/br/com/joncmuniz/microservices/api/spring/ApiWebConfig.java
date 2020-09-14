@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +29,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan({ "br.com.joncmuniz.microservices.common.web", "br.com.joncmuniz.microservices.api.web" })
 @EnableWebMvc
 @EnableSwagger2
+@EnableAutoConfiguration(exclude = {
+		ErrorMvcAutoConfiguration.class,
+		SecurityAutoConfiguration.class
+        }) 
 public class ApiWebConfig implements WebMvcConfigurer {
 
 	public ApiWebConfig() {

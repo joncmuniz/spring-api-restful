@@ -34,7 +34,6 @@ class SingleResourceRetrievedDiscoverabilityListener implements ApplicationListe
     }
 
     /**
-     * - note: at this point, the URI is transformed into plural (added `s`) in a hardcoded way - this will change in the future
      */
     @SuppressWarnings("unchecked")
     final void discoverGetAllURI(final UriComponentsBuilder uriBuilder, final HttpServletResponse response, final Class clazz) {

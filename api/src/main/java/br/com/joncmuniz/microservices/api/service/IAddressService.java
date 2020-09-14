@@ -7,7 +7,7 @@ import br.com.joncmuniz.microservices.common.persistence.service.IService;
 
 public interface IAddressService extends IService<Address> {
 
-	public void managerAddressFromCustomer(Long customerId, Address address);
+	public void manageAddressFromCustomer(Long customerId, Address address);
 
 	public void deleteAddressFromCustomer(Long addressId, Long customerId);
 

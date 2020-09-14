@@ -8,8 +8,4 @@ public abstract class AbstractService<T extends INameableEntity> extends Abstrac
         super();
     }
 
-    
-
-    
-
 }

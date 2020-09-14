@@ -21,7 +21,6 @@ public abstract class AbstractController<T extends INameableEntity> extends Abst
     protected final void createInternal(final T resource, final UriComponentsBuilder uriBuilder, final HttpServletResponse response) {
     	checkOnCreate(resource);
         final T existingResource = getService().create(resource);
-        // - note: mind the autoboxing and potential NPE when the resource has null id at this point (likely when working with DTOs)
         publishEvent(uriBuilder, response, existingResource);
     }
 
@@ -37,10 +36,6 @@ public abstract class AbstractController<T extends INameableEntity> extends Abst
 	}
 
     
-
-    /**
-     * - note: the operation is IDEMPOTENT <br/>
-     */
     protected final void updateInternal(final long id, final T resource) {
         checkOnUpdate(id, resource);        
         getService().update(resource);

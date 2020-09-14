@@ -41,7 +41,7 @@ public class AddresseServiceImpl extends AbstractService<Address> implements IAd
 	}
 
 	@Override
-	public void managerAddressFromCustomer(Long customerId, Address address) {
+	public void manageAddressFromCustomer(Long customerId, Address address) {
 		Customer customer = customerService.findOne(customerId);
 		if (customer == null) {
 			throw new ResourceNotFoundException("Customer not found!");

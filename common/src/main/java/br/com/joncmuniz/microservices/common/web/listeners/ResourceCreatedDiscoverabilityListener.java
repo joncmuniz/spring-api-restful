@@ -33,7 +33,6 @@ public abstract class ResourceCreatedDiscoverabilityListener implements Applicat
     }
 
     /**
-     * - note: at this point, the URI is transformed into plural (added `s`) in a hardcoded way - this will change in the future
      */
     protected void addLinkHeaderOnEntityCreation(final UriComponentsBuilder uriBuilder, final HttpServletResponse response, final String idOfNewEntity, final Class clazz) {
         final String path = calculatePathToResource(clazz);

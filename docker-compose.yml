@@ -7,8 +7,6 @@ services:
     environment:
       POSTGRES_PASSWORD: "postgr3ss@pi"
       POSTGRES_USER: "postgres"
-    ports:
-      - "8082:8082"
     hostname: spring-boot-apis
     extra_hosts:
       - "postgres-spring-api:172.28.0.2"
